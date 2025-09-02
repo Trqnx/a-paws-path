@@ -1,0 +1,183 @@
+[gd_scene load_steps=15 format=3 uid="uid://dfmput4sxf22u"]
+
+[ext_resource type="Script" uid="uid://cmdv8drok66na" path="res://scripts/hud.gd" id="1_ahhtf"]
+[ext_resource type="FontFile" uid="uid://d0hc5am1qc3xm" path="res://assets/Fonts/pixeloid-font/PixeloidSans-mLxMm.ttf" id="2_oo0fn"]
+[ext_resource type="FontFile" uid="uid://cpbirixufx0j5" path="res://assets/Fonts/pixeloid-font/PixeloidSansBold-PKnYd.ttf" id="3_5ysmq"]
+[ext_resource type="AudioStream" uid="uid://d32qhyc23f55a" path="res://assets/sounds/game-over-381772.mp3" id="3_6fi6k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6fi6k"]
+font = ExtResource("3_5ysmq")
+font_size = 80
+font_color = Color(0.280184, 0.0614851, 0.0805061, 1)
+outline_size = 5
+shadow_size = 15
+shadow_color = Color(1, 1, 1, 0.811765)
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ysmq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fi6k"]
+bg_color = Color(0.389287, 0.389287, 0.389286, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uo2fv"]
+bg_color = Color(0.310617, 0.310617, 0.310617, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_047uy"]
+bg_color = Color(0.244776, 0.244776, 0.244776, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ysmq"]
+font = ExtResource("2_oo0fn")
+font_size = 32
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0.00784314, 0.00784314, 0.00784314, 1)
+
+[sub_resource type="Animation" id="Animation_6fi6k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uo2fv"]
+resource_name = "fade_from_black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5ysmq"]
+resource_name = "fade_to_black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_047uy"]
+_data = {
+&"RESET": SubResource("Animation_6fi6k"),
+&"fade_from_black": SubResource("Animation_uo2fv"),
+&"fade_to_black": SubResource("Animation_5ysmq")
+}
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_ahhtf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = 50
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="you_died" type="Label" parent="ColorRect"]
+z_index = 51
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -913.5
+offset_top = -132.0
+offset_right = 913.5
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_6fi6k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="respawn_button" type="Button" parent="ColorRect"]
+process_mode = 3
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = 92.0
+offset_right = 110.0
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_5ysmq")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5ysmq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6fi6k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uo2fv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_047uy")
+text = "Respawn"
+
+[node name="game_over_music" type="AudioStreamPlayer" parent="ColorRect"]
+stream = ExtResource("3_6fi6k")
+volume_db = -17.676
+pitch_scale = 1.7
+bus = &"Music"
+
+[node name="score_count" type="Label" parent="."]
+offset_right = 177.0
+offset_bottom = 53.0
+text = "score = 0"
+label_settings = SubResource("LabelSettings_5ysmq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_047uy")
+}
+
+[node name="Timer" type="Timer" parent="AnimationPlayer"]
+wait_time = 0.074
+
+[connection signal="pressed" from="ColorRect/respawn_button" to="." method="_on_respawn_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="AnimationPlayer/Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://7df8a4l7wfx5"
+path="res://.godot/imported/Game Main Menu Music ( 5th Album ) _ copyright free music - Orwa Farran.mp3-4f0c3e45eda896a8bfdf0f65d8aa00b9.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Game Main Menu Music ( 5th Album ) _ copyright free music - Orwa Farran.mp3"
+dest_files=["res://.godot/imported/Game Main Menu Music ( 5th Album ) _ copyright free music - Orwa Farran.mp3-4f0c3e45eda896a8bfdf0f65d8aa00b9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

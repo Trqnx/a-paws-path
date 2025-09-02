@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://4wqlwuoponu5"
+path="res://.godot/imported/[Non-Copyrighted Music] Chill Jazzy Lofi Hip Hop (Royalty Free) Jazz Hop Music - Chill - Copyright Free Music.mp3-e9a2a3ba8c85937cf552c5b5d33eacb7.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/[Non-Copyrighted Music] Chill Jazzy Lofi Hip Hop (Royalty Free) Jazz Hop Music - Chill - Copyright Free Music.mp3"
+dest_files=["res://.godot/imported/[Non-Copyrighted Music] Chill Jazzy Lofi Hip Hop (Royalty Free) Jazz Hop Music - Chill - Copyright Free Music.mp3-e9a2a3ba8c85937cf552c5b5d33eacb7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
